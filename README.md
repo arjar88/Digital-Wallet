@@ -1,17 +1,34 @@
-This is my digital wallet backend application. It is built with the microservices architecture and is split into three services:
-  1)Users-responsible for handling the users
-  2) Payments-handles the payments and transaction functionalities.
-  3)Notifications-notifies users once a transaction has either succeded or failed.
-each service has its db as per the microservice architecture standard.
+# Digital Wallet Backend Application
 
-The service folder structure is built like this:
-  Config-contains the DB config file to initialize the connection to DB
-  Models- contains db schema for particular service
-  Controllers-contains the endpoint functions
-  Routes-sets up the routes
-  app.js file - to initialize the services server
+## Overview
 
+This is a microservices-based backend application for a digital wallet. The application is split into three services, each responsible for specific functionalities:
 
+1. **Users Service**: Handles user-related operations.
+2. **Payments Service**: Manages payments and transaction functionalities.
+3. **Notifications Service**: Notifies users about transaction outcomes.
 
+Each service has its own database, adhering to the microservices architecture standard.
 
-To Run all services (separate processes), cd to root of the project and run node index.js
+## Folder Structure
+
+  - Config: Contains the DB configuration file.
+  - Models: Defines the database schema.
+  - Controllers: Holds endpoint functions.
+  - Routes: Sets up the service-specific routes.
+  - app.js: Initializes the Notifications service server.
+
+## Assumptions
+
+  -I used the userName as the unique identifier
+  -used the Mongoose library
+
+## How to Run
+
+To run all services as separate processes, follow these steps:
+
+1. Navigate to the root of the project.
+2. Run the following command in the terminal:
+
+   ```bash
+   node index.js
