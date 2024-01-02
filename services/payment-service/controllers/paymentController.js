@@ -64,6 +64,21 @@ const transferMoney = async (req, res) => {
   }
 };
 
+const getAllTransactionsofUser = async (req, res) => {
+  try {
+    const { userName } = req.params;
+    console.log(userName);
+
+    const transactions = await Payment.find({
+      $or: [{ sender: userName }, { recipient: userName }],
+    });
+    res.status(200).json(transactions);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   transferMoney,
+  getAllTransactionsofUser,
 };
